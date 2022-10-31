@@ -4,55 +4,72 @@
 // Deberéis utilizar una página con la descripción del dios que corresponda a vuestro signo. Mostrar en iframe.
 // No se pueden utilizar arrays, debiendo encontrar otra solución que utilice switch
 
+/**
+ * @param {*} fechaNacimientoprompt Guardamos la fecha de nacimiento del usuario
+ * @param {*} fechaMapa Guardamos la fecha en un mapa cada vez que se encuentre una /
+ * @param {*} fechaNacimiento Guardamos la fecha con el formato y con los valores del mapa
+ * @author Juan Luis Hernandez Terron
+ */
 let fechaNacimientoprompt = prompt("Dime tu fecha de nacimiento (yyyy/mm/dd)");
 let fechaMapa = fechaNacimientoprompt.split("/");
 const fechaNacimiento = new Date(fechaMapa[0]+"/"+fechaMapa[1]+"/"+fechaMapa[2]);
 fechaNacimiento.setDate(fechaMapa[2]);
 
+/**
+ * @function signoEgipcio Pedimos por parameto una fecha, posteriormente tenemos un switch donde depende del mes entrara en cada case, cuando entre en el case, tendremos un if que validará si estña en el rango de fecha , y si está en el rango de fecha,
+ *                        llamaremos a la funcion mostrarIframe(), y si no nos mostrará por pantalla un alert de que hemos introducido mal los datos
+ */
 signoEgipcio(fechaNacimiento);
 function signoEgipcio(fecha) {
     const dia = Number(fecha.getDate());
     const mes = Number(fecha.getMonth()+1);
     
     switch (mes) {
-        case 1,2:
-                ((dia >= 16 && mes ==1 ) ||(dia <= 15 && mes == 2)) ? mostrarIframe("bastet") : alert("Introduce bien el dato"); 
+        case 1:
+                (dia <= 15) ? mostrarIframe("anubis") : (dia >= 16) ? mostrarIframe("bastet") : alert("Has introducido mal el dato"); 
             break;
-        case 2,3:
-                ((dia >= 16 && mes ==2 ) ||(dia <= 15 && mes == 3)) ? mostrarIframe("selket") : alert("Introduce bien el dato"); 
+        case 2:
+                (dia <= 15) ? mostrarIframe("bastet") : (dia >= 16) ? mostrarIframe("selket") : alert("Has introducido mal el dato"); 
             break;
-        case 3,4:
-                ((dia >= 16 && mes ==3 ) ||(dia <= 15 && mes == 4)) ? mostrarIframe("apep") : alert("Introduce bien el dato"); 
+        case 3:
+                (dia <= 15) ? mostrarIframe("selket") : (dia >= 16) ? mostrarIframe("apep") : alert("Has introducido mal el dato"); 
             break;
-        case 4,5:
-                ((dia >= 16 && mes ==4 ) ||(dia <= 15 && mes == 5)) ? mostrarIframe("ptah") : alert("Introduce bien el dato"); 
+        case 4:
+                (dia <= 15) ? mostrarIframe("apep") : (dia >= 16) ? mostrarIframe("ptah") : alert("Has introducido mal el dato"); 
             break;
-        case 5,6:
-                ((dia >= 16 && mes ==5 ) ||(dia <= 15 && mes == 6)) ? mostrarIframe("atum") : alert("Introduce bien el dato"); 
+        case 5:
+                (dia <= 15) ? mostrarIframe("ptah") : (dia >= 16) ? mostrarIframe("atum") : alert("Has introducido mal el dato");  
             break;
-        case 6,7:
-                ((dia >= 16 && mes ==6 ) ||(dia <= 15 && mes == 7)) ? mostrarIframe("isi") : alert("Introduce bien el dato"); 
+        case 6:
+                (dia <= 15) ? mostrarIframe("atum") : (dia >= 16) ? mostrarIframe("isi") : alert("Has introducido mal el dato"); 
             break;
-        case 7,8:
-                ((dia >= 16 && mes ==7 ) ||(dia <= 15 && mes == 8)) ? mostrarIframe("ra") : alert("Introduce bien el dato"); 
+        case 7:
+                (dia <= 15) ? mostrarIframe("isi") : (dia >= 16) ? mostrarIframe("ra") : alert("Has introducido mal el dato"); 
             break;
-        case 8,9:
-                ((dia >= 16 && mes ==8 ) ||(dia <= 15 && mes == 9)) ? mostrarIframe("horus") : alert("Introduce bien el dato"); 
+        case 8:
+                (dia <= 15) ? mostrarIframe("ra") : (dia >= 16) ? mostrarIframe("horus") : alert("Has introducido mal el dato"); 
             break;
-        case 9,10:
-                ((dia >= 16 && mes ==9 ) ||(dia <= 15 && mes == 10)) ? mostrarIframe("maat") : alert("Introduce bien el dato"); 
+        case 9:
+                (dia <= 15) ? mostrarIframe("horus") : (dia >= 16) ? mostrarIframe("maat") : alert("Has introducido mal el dato"); 
             break;
-        case 10,11:
-                ((dia >= 16 && mes ==10 ) ||(dia <= 15 && mes == 11)) ? mostrarIframe("osiris") : alert("Introduce bien el dato"); 
+        case 10:
+                (dia <= 15) ? mostrarIframe("maat") : (dia >= 16) ? mostrarIframe("osiris") : alert("Has introducido mal el dato"); 
             break;
-        case 11,12:
-                ((dia >= 16 && mes ==11 ) ||(dia <= 15 && mes == 12)) ? mostrarIframe("hato") : alert("Introduce bien el dato"); 
+        case 11:
+                (dia <= 15) ? mostrarIframe("osiris") : (dia >= 16) ? mostrarIframe("hato") : alert("Has introducido mal el dato"); 
             break;
-        case 12,1:
-                ((dia >= 16 && mes ==12 ) ||(dia <= 15 && mes == 1)) ? mostrarIframe("anubis") : alert("Introduce bien el dato"); 
+        case 12 :
+                (dia <= 15) ? mostrarIframe("hato") : (dia >= 16) ? mostrarIframe("anubis") : alert("Has introducido mal el dato"); 
             break;
     }
 }
+
+/**
+ * 
+ * @param {*} signo Es el valor que reciviremos de la validacion de fecha de la funcion signoEgipcio()
+ * @function mostrarIframe Crearemos una variable link donde dentro del switch, cuando entre en el case que sea igual a la cadena que tenemos como key, cambiará el valor de link, de vacía, a contener el link del horoscopo egipcio que le pertenece,
+ * @param {*} iframe Crearemos un elemento iframe donde le introduciremos como atributo un source (src) y el link del horoscopo egipcio, luego lo mostraremos en el html con el appendChild 
+ */
 
 function mostrarIframe(signo) {
     var link = "";
@@ -98,8 +115,8 @@ function mostrarIframe(signo) {
             break;
     }
     var iframe = document.createElement("iframe");
-    iframe.width="75%";
-    iframe.height="450px";
+    iframe.width="80%";
+    iframe.height="650px";
     iframe.setAttribute("src",link)
     document.getElementById("mostrarIframe").appendChild(iframe);
 }

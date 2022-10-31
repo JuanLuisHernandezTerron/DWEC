@@ -21,7 +21,7 @@ function analizadorFrase(frase,posiciones) {
                 }else{
                     fraseAUx += frase.charAt(i);
                 }
-            contadorLetras = 1;
+            contadorLetras = 0;
         }else{
             fraseAUx += frase.charAt(i);
             contadorLetras ++;
