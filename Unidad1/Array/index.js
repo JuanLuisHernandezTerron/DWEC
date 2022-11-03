@@ -49,10 +49,10 @@ var arrayPaises = ["Afghanistan", "Indonesia", "Spain", "Andorra", "Angola", "An
             anadirPais();
             break;
         case 5:
-            borrarPais();
+            borrarDisco();
             break;
         case 6:
-            consultarPaises();
+            consultarDisco();
             break;
         default:
             break;
@@ -62,14 +62,14 @@ var arrayPaises = ["Afghanistan", "Indonesia", "Spain", "Andorra", "Angola", "An
  * @function consultarPaises Esta funcion contiene un switch que da opcion a consultar por poscion o por nombre
  */
 
-function consultarPaises() {
+function consultarDisco() {
     switch (Number(prompt("Quieres consultar por: 1. Posicion\n2. Nombre"))) {
         case 1:
             mostrarElementoPosicion(prompt("Dime una posicion para saber el pais"));
             break;
 
         case 2:
-            mostrarPaisElemento(prompt("Dime el nombre del pais para saber su posición"));
+            mostrarDiscoElemento(prompt("Dime el nombre del pais para saber su posición"));
             break;
         default:
             break;
@@ -80,7 +80,7 @@ function consultarPaises() {
  * @function borrarPais Esta funcion contiene un switch donde podremos borrar un elemento al final o al principio del array
  */
 
-function borrarPais() {
+function borrarDisco() {
     switch (Number(prompt("Quieres borrar: 1. Principio\n2. Final"))) {
         case 1:
             borrarElementoPrincipio();
@@ -101,10 +101,10 @@ function borrarPais() {
 function anadirPais() {
     switch (Number(prompt("Quieres ingresarlo:\n 1. Principio\n2. Final"))) {
         case 1:
-            anadirPaisPrincipio(prompt("Que pais quieres añadir?"));
+            anadirDiscoPrincipio(prompt("Que pais quieres añadir?"));
             break;
         case 2:
-            anadirPaisFinal(prompt("Que pais quieres añadir?"));
+            anadirDiscoFinal(prompt("Que pais quieres añadir?"));
             break;
     
         default:
@@ -172,7 +172,7 @@ function muestraIntervaloPaises(inicio,fin) {
  * @function mostrarPaisElemento Muestra la posicion en la que está el pais que ha introducido el usuario
  */
 
-function mostrarPaisElemento(pais) {
+function mostrarDiscoElemento(pais) {
     alert("El pais "+pais+ " está en la posicion "+ arrayPaises.indexOf(pais));
 }
 
@@ -205,7 +205,7 @@ function borrarElementoPrincipio() {
  * 
  * @function anadirPaisFinal Añade un país al final del array y lo muestra con la funcion mostrarTodosPaises()
  */
-function anadirPaisFinal(paisAnadir) {
+function anadirDiscoFinal(paisAnadir) {
     arrayPaises.push(paisAnadir)
     mostrarTodosPaises();
 }
@@ -213,7 +213,7 @@ function anadirPaisFinal(paisAnadir) {
  * 
  * @function anadirPaisPrincipio Añade un país al principio del array y lo muestra con  la  funcion mostrarTodosPaises() 
  */
-function anadirPaisPrincipio(paisAnadir) {
+function anadirDiscoPrincipio(paisAnadir) {
     arrayPaises.unshift(paisAnadir)
     mostrarTodosPaises();
 }
