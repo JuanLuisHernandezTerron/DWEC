@@ -8,10 +8,6 @@ var imgAUX1;
 var imgAUX2;
 var contador = 0;
 tdHabilitar()
-/**
- *
- * @param  
- */
 function tdHabilitar() {
    for (let i = 0; i < queryGlobal.length; i++) {   
         queryGlobal[i].addEventListener("click",habilitar,false);

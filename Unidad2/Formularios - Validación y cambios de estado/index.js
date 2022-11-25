@@ -4,13 +4,14 @@ const $grupoMusica = document.getElementById("musica");
 const $anoPublicacion = document.getElementById("anoPubli");
 const $localizacion = document.getElementById("localizionDisco");
 const $prestado = document.getElementById("checkboxPrestado");
-
+$NombreDisc.addEventListener("keyup",inputROJOVERDE,false);
+$anoPublicacion.addEventListener("keyup",inputROJOVERDEFecha,false);
 function handleSubmit(e) {  
     const nombre = $NombreDisc.value;
     const grupoMusicCantante = $grupoMusica.value;
     const anoPubli = $anoPublicacion.value;
     const localizacion = $localizacion.value;
-    const es_Valid = new Boolean(true);
+    var es_Valid = new Boolean(true);
 
     if (nombre === false || isValidNombreGrupoMusica(nombre) === false) {
         alert("Has introducido mal el nombre")
@@ -36,10 +37,32 @@ function handleSubmit(e) {
         alert("No has introducido bien el numero")
         es_Valid = false;
     }
+    window.addEventListener('submit',handleSubmit);
+    $Form.addEventListener('submit',handleSubmit);
 }
 
-window.addEventListener('submit',handleSubmit);
-$Form.addEventListener('submit',handleSubmit);
+
+function inputROJOVERDE(e) {
+    const input = e.currentTarget;
+    const valor = input.value;
+    if (isValidNombreGrupoMusica(valor)) {
+        input.className="correcto";
+    }else{
+        input.className="Incorrecto";
+
+    }
+}
+
+function inputROJOVERDEFecha(e) {
+    const input = e.currentTarget;
+    const valor = input.value;
+    if (isValidAnoPubli(valor)) {
+        input.className="correcto";
+    }else{
+        input.className="Incorrecto";
+
+    }
+}
 
 function isValidNombreGrupoMusica(nombre) {
     const validacion = /^\w{1,20}$/
