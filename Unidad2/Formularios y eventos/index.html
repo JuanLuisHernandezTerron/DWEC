@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./index.js"></script>
+    <title>Formularios y eventos</title>
+</head>
+<body>
+    <table>
+            <tr>
+                <td id="td1"><img id="img1" src="./imagenes/01_lisa.png" alt="imagen-lisa"></td>
+                <td id="td2"><img id="img2" src="./imagenes/02_bart.png" alt="imagen-bart"></td>
+                <td id="td3"><img id="img3" src="./imagenes/02_bart.png" alt="imagen-bart"></td>
+                <td id="td4"><img id="img4" src="./imagenes/03_homer.png" alt="imagen-homer"></td>
+            </tr>
+            <tr>
+                <td id="td5"><img id="img5"src="./imagenes/04_marge.png" alt="imagen-marge"></td>
+                <td id="td6"><img id="img6" src="./imagenes/03_homer.png" alt="imagen-homer"></td>
+                <td id="td7"><img id="img7" src="./imagenes/05_maggie.png" alt="imagen-maggie"></td>
+                <td id="td8"><img id="img8"src="./imagenes/05_maggie.png" alt="imagen-maggie"></td>
+            </tr>
+            <tr>
+                <td id="td9"><img id="img9" src="./imagenes/04_marge.png" alt="imagen-marge"></td>
+                <td id="td10"><img id="img10" src="./imagenes/01_lisa.png" alt="imagen-lisa"></td>
+                <td id="td11"><img id="img11" src="./imagenes/06_flanders.png" alt="imagen-homer"></td>
+                <td id="td12"><img id="img12" src="./imagenes/06_flanders.png" alt="imagen-homer"></td>
+            </tr>
+    </table>
+    <input id="contadorAciertos" type="text" value="0" readonly>
+</body>
+<style>
+    table,tr,td{
+        border: 1px solid rgb(253, 0, 0);
+    }
+
+    td{
+        height: 300px;
+        width: 20%;
+    }
+
+    table{
+        text-align: center;
+        width: 80%;
+        height: 400px;
+    }
+
+    img{
+        width: 50%;
+        display: none;
+    }
+
+    .habilitar{
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+
+    .correcto{
+        border-color: green;
+    }
+    .desaparece{
+        display: none;
+    }
+    .repetido{
+        border-color: red;
+    }
+</style>
+</html>

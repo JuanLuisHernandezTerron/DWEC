@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <form id="formulario" action="formu">
+        <fieldset>
+        <legend>Formulario</legend>
+        <label for="Nombre-Disco">Nombre del disco</label>
+            <input id="nombreDisc"type="text"><br>
+            <label for="grupoMusica">Grupo de musica o cantante</label>
+            <input id="musica" type="text"><br>
+            <label for="AnoPubli">Año Publicacion</label>
+            <input type="text" id="anoPubli"><br>
+            <label for="">Tipo Musica</label>
+            <Select>
+                <option value="Rock">Rock</option>
+                <option value="Pop">Pop</option>
+                <option value="Punk">Punk</option>
+                <option value="Indie">Indie</option>
+            </Select><br>
+            <label for="localizionDisco">Localización</label>
+            <input type="number"><br>
+            <label for="Prestado">Prestado</label>
+            <input type="checkbox" name="checkboxPrest" id="checkboxPrestado"><br>
+            <input type="submit">
+        </fieldset>
+    </form>
+</body>
+<style>
+    fieldset{
+        width: 30%;
+    }
+</style>
+</html>
