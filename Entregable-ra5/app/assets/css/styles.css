@@ -1,0 +1,186 @@
+/*Header*/
+header{
+    height: auto;
+    background-color: #4DB6AC;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.img-logo{
+    filter: invert(0%) sepia(5%) saturate(21%) hue-rotate(185deg) brightness(98%) contrast(104%);
+}
+
+header ul a li:first-child{
+    display: inline-block;
+    margin-left: 0%;
+}
+
+a:link, a:visited, a:active{
+    text-decoration: none;
+    color: black;
+}
+
+header ul a{
+    display: inline-block;
+    margin-left: 8%;
+}
+
+
+header ul{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin: 0px;
+}
+
+.verificadoSLUG{
+    color: rgb(90, 238, 233);
+}
+h2{
+    font-size: 35px;
+    font-weight: bold;
+}
+.textoSpan{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.horaEvento{
+    justify-content: center;
+    align-self: center;
+}
+
+/*Evento.html*/
+/*InfoEvento EVENTO.HTML*/
+.info-evento{
+    background-color: #ccf1ee;
+    text-align: center;
+
+}
+
+.info-evento img{
+    padding: 1%;
+    border-radius: 20px;
+}
+
+.letrero{
+    padding-top: 1%;
+    padding-left: 2%;
+    font-size: 25px;
+    font-weight: bold;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/*FORMULARIO EVENTO.HTML*/
+
+legend{
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.form-Evento{
+    margin-top: 2.5%;
+    text-align: center;
+    border: #4DB6AC solid 3px;
+    background-color: #ccf1ee;
+    border-radius: 15px;
+    padding: 3%;
+}
+
+.form-Evento label{
+    padding: 1%;
+    margin-right: 115px;
+}
+
+.fechEvento{
+    margin-right: 50px;
+}
+
+.formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input{
+    border-radius: 5px;
+}
+button{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 15px;
+    padding: 0.8%;
+    border-radius: 5px;
+}
+
+.warning{
+    color: red;
+    font-size: 10px;
+    font-weight: bold;
+    display: block;
+}
+
+.warningSolucionado{
+    display: none;
+}
+
+span{
+    display: none;
+}
+
+/*Tabla runner*/
+
+td{
+    border: black solid 2px;
+    padding: 1%;
+}
+
+table{
+    margin-top: 5%;
+}
+
+/*PAGINA WEB REGISTRO*/
+
+.form-registro{
+   margin: auto;
+}
+
+#name-fechaNacimiento,#name-confirmPassword{
+    margin-right: 55px;
+}
+
+#labelcomuAutonoma{
+    margin-right: 50px;
+}
+select{
+    width: 28%;
+    border-radius: 5px;
+    padding: 0.5%;
+}
+
+
+.mostrarProvincias,.label-provincias{
+    display: inline-block;
+}
+
+#fechaNacimiento{
+    margin-right: 0px;
+    text-align: center;
+    width: 30%;
+}
+/*Warnings*/
+
+.noValido{
+    border-color: red
+}
+
+.valido{
+    border-color: black;
+}
+
+/*Codigo postal*/
+.inputPostal:valid{
+    border-color: green;
+}
+
+.inputPostal:invalid{
+    border-color: red;
+}

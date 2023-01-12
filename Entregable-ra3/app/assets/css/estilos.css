@@ -1,0 +1,18 @@
+body{
+    height: 700px;
+}
+#contenido{
+    text-align: center;
+    margin: auto;
+    border: black solid;
+    width: 50%;
+    height: 600px;
+}
+
+img{
+    display: block;
+    margin: auto;
+}
+#botonCenter{
+    text-align: center;  
+}

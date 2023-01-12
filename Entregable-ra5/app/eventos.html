@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>NEXO RUN ~ Eventos Deportivos</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <header class="col-12">
+                <div class="row">
+                    <img class="col-2 img-logo" src="./assets/images/LOGO.png"/>
+                    <ul class="col-10">
+                        <a href="./index.html"><li id="index">Home</li></a>
+                        <a href="./eventos.html"><Eventos id="eventos">Eventos</li></a>
+                        <a href="./login.html"><li id="login">Login</li></a>
+                        <a href="./registro.html"><li id="registro">Registro</li></a>
+                    </ul>
+                </div>
+            </header>
+        </div>
+        <div class="row">
+            <main class="col-12">
+                <div class="row col-13 info-evento">
+                    <img src="./assets/images/01-bormujos_20440064_20200527081243.jpg" class="col-2 " alt="imagen-Bormujos" />
+                    <div class="col-10">
+                        <div class="row">
+                            <p id="nombre-Evento" class="col-12"></p>
+                        </div>
+                        <div class="row">
+                            <p id="localidadEvento" class="col-5"></p>
+                            <p id="fechaEvento" class="col-5"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 formulario">
+                        <form class="col-7 form-Evento" id="formulario-id">
+                            <fieldset>
+                                <legend>INTRODUCE TU TIEMPO EN EL EVENTO!</legend>
+                                <label for="nameFormulario">Nombre</label><br>
+                                <input type="text" placeholder="Inserte su nombre..." required><br>
+                                <label for="apellidosFormulario">Apellidos</label><br>
+                                <input type="text" placeholder="Inserte su apellido..." required><br>
+                                <label for="dorsal">Dorsal</label><br></span>
+                                <input type="number" id="dorsal" min=0 placeholder="Ingresa Dorsal" required><br>
+                                <span id="mensajeWarningDorsal"></span>
+                                <label for="apellidosFormulario">Fecha Inicio</label><br>
+                                <input type="text" id="fechaWarning" placeholder="EJ: 09-12-2022 10:35:20" required><br>
+                                <label for="apellidosFormulario">Fecha Fin</label><br>
+                                <input type="text" placeholder="EJ: 09-12-2022 17:35:20" ><br>
+                                <button type="click" >INTRODUCIR TIEMPO</button>
+                                <span id="mensajeWarningFecha"></span>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <table class="col-12" id="tablaRunners">
+                        <thead>
+                            <tr>
+                                <td>Nombre</td>
+                                <td>Apellidos</td>
+                                <td>Dorsal</td>
+                                <td>Fecha Inicio</td>
+                                <td>Fecha Fin</td>
+                                <td>Diferencia</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="./assets/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="./assets/js/utils.js"></script>
+</body>
+</html>

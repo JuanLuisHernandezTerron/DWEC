@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./assets/js/utils.js"></script>
+    <title>Ejercicio 5</title>
+    <script>
+        window.onbeforeunload = function () {
+         return "Se va a perder todos los datos, estas segur@?"
+      }
+   </script>
+</head>
+<body>
+    <form action="formulari" id="formulario">
+        <label for="Nombre">Nombre</label>
+            <input type="text" id="nombre" required><br>
+        <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos" required><br>
+        <label for="fechaNaci">Fecha Nacimiento</label>
+            <input type="date" name="fecha" id="fechaNacimiento" required><br>
+        <label for="emial">E-mail</label>
+            <input type="email" id="e-mail" required><br>
+        <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" required><br>
+        <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" required><br>
+        <label for="ConfirmarContrasena">Confirmar Contraseña</label>
+            <input type="password" id="ConfirmContrasena" required><br>
+        <label for="web">Web</label>
+            <input type="url" id="PaginaWeb" required><br>
+        <input type="submit" value="Enviar Formulario" onclick="ejercicio5()">
+    </form>
+</body>
+</html>

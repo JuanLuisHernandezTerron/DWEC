@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>NEXO RUN ~ Eventos Deportivos</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <header class="col-12">
+                <div class="row">
+                    <img class="col-2 img-logo" src="./assets/images/LOGO.png"/>
+                    <ul class="col-10">
+                        <a href="./index.html"><li id="index">Home</li></a>
+                        <a href="./eventos.html"><Eventos id="eventos">Eventos</li></a>
+                        <a href="./login.html"><li id="login">Login</li></a>
+                        <a href="./registro.html"><li id="registro">Registro</li></a>
+                    </ul>
+                </div>
+            </header>
+        </div>
+        <div class="row">
+            <main class="col-12">
+                <div class="col-8 form-registro">
+                    <form class="form-Evento" id="formulario2">
+                        <legend>REGÍSTRATE PARA LA WEB</legend>
+                        <label for="Nombre">Nombre</label><br>
+                            <input type="text" id="nombre" placeholder="Introduce Nombre..." required><br>
+                            <span id="warningNombre"></span>
+                        <label for="apellidos">Apellidos</label><br>
+                            <input type="text" id="apellidos" placeholder="Introduce Apellidos..." required><br>
+                            <span id="warningApellidos"></span>
+                        <label for="fechaNaci" id="name-fechaNacimiento" >Fecha Nacimiento</label><br>
+                            <input type="date"  name="fecha" id="fechaNacimiento" required><br>
+                            <span id="warningMenor"></span>
+                        <label for="emial">E-mail</label><br>
+                            <input type="email" id="e-mail" placeholder="Introduce E-mail..." required><br>
+                            <span id="warningEmail"></span><br>
+                        <label for="usuario">Usuario</label><br>
+                            <input type="text" id="usuario" placeholder="Introduce Usuario..." required><br>
+                            <span id="warningUser"></span><br>
+                        <label for="contrasena">Contraseña</label><br>
+                            <input type="password" id="contrasena" class="inputContraseña" placeholder="Ej: a#A123" required><br>
+                            <span id="warningContrasena"></span><br>
+                        <label for="ConfirmarContrasena" id="name-confirmPassword">Confirmar Contraseña</label><br>
+                            <input type="password" id="ConfirmContrasena" placeholder="Introduce de nuevo contraseña..." required><br>
+                            <span id="warningRepetirContrasena"></span><br>
+                        <label for="web">Web</label><br>
+                            <input type="url" id="PaginaWeb" placeholder="Introduce página web..." required><br>
+                            <span id="warningWeb"></span>
+                        <label for="CPostal">Código Postal</label><br>
+                            <input type="text" class="inputPostal" pattern="(0[1-9]|[1-4][0-9]|5[0-2])[0-9]{3}" placeholder="Inserta Codigo Postal..." required><br>
+                        <label for="CAutonoma" id="labelcomuAutonoma">Comunidad Autónoma</label><br>
+                        <select name="comunidadAutonoma" id="comuAutonoma" required>
+                            <option value=""> </option>
+                        </select><br>
+                        <span id="warningComunidad"></span><br>
+                        <label for="CAutonoma" class="label-provincias">Provincias</label><br>
+                        <select name="ciudad" class ="selectCiudad" id="Ciudad">
+                            <option value=""> </option>
+                        </select><br>
+                        <span id="warningCiudad"></span><br>
+                        <button type="submit">REGISTRARSE</button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="./assets/js/jquery-3.2.1.slim.min.js"></script>
+    <script defer src="./assets/js/utils.js"></script>
+</body>
+</html>

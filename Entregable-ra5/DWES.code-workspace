@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../DWES"
+		},
+		{
+			"path": "../DWEC"
+		},
+		{
+			"path": "../DIW"
+		},
+		{
+			"path": "../entregable-ra3-2022-2023-JuanLuisHernandezTerron"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "entregable-ra5-2022-2023-JuanLuisHernandezTerron"
+	}
+}
