@@ -1,0 +1,18 @@
+{
+    "Series":[
+        {
+            "titulo":"La que se avecina",
+            "cadena":"Telecinco",
+            "director":"Juan Luis Hernandez",
+            "ano":"2008",
+            "terminada":"no"
+        },
+        {
+            "titulo":"Aquí no hay quien viva",
+            "cadena":"Antena3",
+            "director":"Jose Luis Hernandez",
+            "ano":"2005",
+            "terminada":"si"
+        }
+    ]
+}

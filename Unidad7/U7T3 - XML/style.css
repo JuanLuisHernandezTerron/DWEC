@@ -1,0 +1,21 @@
+.bordes{
+    border: 1px solid rgb(0, 0, 0);
+    padding: 5px;
+}
+
+.amarillo{
+    color: yellow;
+}
+
+.rojo{
+    color: red;
+}
+
+.verde{
+    color: green;
+}
+
+img{
+    height: 24px;
+    width: 24px;
+}

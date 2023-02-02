@@ -1,0 +1,16 @@
+<Series>
+    <serie>
+        <titulo>La que se avecina</titulo>
+        <cadena>Telecinco</cadena>
+        <Director>Juan Luis Hernandez</Director>
+        <Ano>2008</Ano>
+        <terminada>No</terminada>
+    </serie>
+    <serie>
+        <titulo>Aquí no hay quien viva</titulo>
+        <cadena>Antena3</cadena>
+        <Director>Jose Luis Hernandez</Director>
+        <Ano>2005</Ano>
+        <terminada>Si</terminada>
+    </serie>
+</Series>
