@@ -19,7 +19,7 @@ function recogerInformacion() {
             const longitudSeries = resultado.Series;
             for (let index = 0; index < longitudSeries.length; index++) {
                 creacionTheaders(arrayTittle=Object.keys(resultado.Series[index]))
-                creacionTabla(resultado.Series[index].ano,resultado.Series[index].cadena,resultado.Series[index].director,resultado.Series[index].titulo,resultado.Series[index].terminada)
+                creacionTabla(resultado.Series[index].anyo,resultado.Series[index].cadena,resultado.Series[index].director,resultado.Series[index].titulo,resultado.Series[index].terminada)
             }
         }
     }

@@ -1,0 +1,31 @@
+hr{
+    border: 1px solid black !important;
+}
+
+.bordes{
+    border: 2px solid rgb(0, 0, 0);
+    padding: 5px;
+}
+
+.amarillo{
+    color: yellow;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 5px;
+}
+
+.rojo{
+    color: red;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 5px;
+}
+
+.verde{
+    color: green;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 5px;
+}
+
+img{
+    height: 24px;
+    width: 24px;
+}
