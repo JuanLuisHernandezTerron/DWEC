@@ -15,24 +15,60 @@ window.addEventListener('load',()=>{
     })
 
     obtenerInfoGuardar.addEventListener('click',()=>{
-        const idPersonaje = document.getElementById('selectPersonaje');
-        console.log(idPersonaje)
-        guardarInfo()
+        // const idPersonaje = document.getElementById('selectPersonaje');
+        const idPersonajeAUX = document.getElementById('selectPersonaje').value;
+        const arraySelect = document.querySelectorAll('option')
+        for (let i = 0; i < arraySelect.length; i++) {
+            if (arraySelect[i].label === idPersonajeAUX ) {
+                guardarInfo(arraySelect[i].id)
+            }
+        }
     })
 })
 
-function guardarInfo() {
+function guardarInfo(idPersonaje) {
     console.log('Entrando en guardarInfo')
-    fetch('https://rickandmortyapi.com/api/character/'+i)
+     fetch('https://rickandmortyapi.com/api/character/'+idPersonaje)
+         .then((response)=>{
+             if (response.ok) {
+                 return response.json();
+             }
+         })
+         .then((data)=>{
+             ingresarDatoBBDD(data)
+         }) 
+}
+
+function ingresarDatoBBDD(informacionPersonaje) {
+
+    var personajeIngresar = {
+        'id': informacionPersonaje.id,
+        'name':informacionPersonaje.name,
+        'air_date':informacionPersonaje.created,
+        'episode':informacionPersonaje.episode[0]
+    }
+    console.log(personajeIngresar)
+    fetch('guardar_episodio_rm.php',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(personajeIngresar)
+    })
         .then((response)=>{
             if (response.ok) {
+                console.log('Ingresado Correctamente')
+                const breadcrumbs = document.getElementById('breadcrumb')
+                const p = document.createElement('p')
+                p.textContent = 'Se ha ingresado el capitulo de '+ informacionPersonaje.name;
+                breadcrumbs.appendChild(p)
                 return response.json();
             }
         })
-        .then((data)=>{
-            console.log(data)
-        }) 
-}
+        .catch((err)=>{
+            console.log(err);
+        })
+ }
 
 function selectXML(numeroMin,numeroMax) {
     console.log("Entrando en la funcion selectXML")
