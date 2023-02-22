@@ -69,11 +69,40 @@ function ingresarDatoBBDD(informacionPersonaje) {
             console.log(err);
         })
  }
-
 function selectXML(numeroMin,numeroMax) {
     console.log("Entrando en la funcion selectXML")
     if (numeroMin > 0 && numeroMax > 0 ) {
-        
+        for (let i = numeroMin; i <= numeroMax; i++) {
+        if (window.XMLHttpRequest) {
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                guardarInfoXML(xhr)
+            };
+            xhr.open('GET','https://rickandmortyapi.com/api/character/'+i);
+            xhr.send();
+            }
+        }
+    }
+}
+
+function guardarInfoXML(xhr) {
+    if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+            let arrayPersonajes =[]
+            resultado = JSON.parse(xhr.responseText);
+            console.log('Ingresado Correctamente')
+            const breadcrumbs = document.getElementById('breadcrumb')
+            const select = document.getElementById('selectPersonaje');
+            const option = document.createElement('option');
+                const p = document.createElement('p')
+                p.textContent = 'Se ha cargado el capitulo de '+ resultado.name;
+                breadcrumbs.appendChild(p)
+            option.textContent = resultado.name;
+                option.setAttribute('id',resultado.id)
+                select.appendChild(option);
+            arrayPersonajes.push(resultado)
+            mostrarInfo(arrayPersonajes)
+        }
     }
 }
 
@@ -131,4 +160,3 @@ function mostrarInfo(dato) {
         divInfo.appendChild(hr)
     }
 }
-
