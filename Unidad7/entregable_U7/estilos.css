@@ -1,0 +1,12 @@
+table{
+    width: 100%;
+}
+
+button{
+    width: 15%;
+}
+th,td{
+    border: 1px solid black;
+    width: 15%;
+    text-align: center;
+}
