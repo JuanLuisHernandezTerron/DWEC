@@ -91,9 +91,10 @@ function crearTabla(arrayPersonajes) {
             tdValor.textContent = arrayPersonajes[i][key]
             tr.appendChild(tdValor)
         }
-        const buttonGuardar = document.createElement('button')
+        const buttonGuardar = document.createElement('input')
         buttonGuardar.textContent = 'Guardar';
         buttonGuardar.setAttribute('id',arrayPersonajes[i].id)
+        buttonGuardar.setAttribute('type','checkbox')
         tr.appendChild(buttonGuardar)
         
         buttonGuardar.addEventListener('click',guardarBoton)
