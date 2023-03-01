@@ -97,47 +97,54 @@ function crearTabla(arrayPersonajes) {
         buttonGuardar.setAttribute('type','checkbox')
         tr.appendChild(buttonGuardar)
         
-        buttonGuardar.addEventListener('click',guardarBoton)
     }
     let p = document.createElement('p');
     p.textContent = "Tabla Cargada completamente";
     breadCrumb.appendChild(p)
 }
 
-function guardarBoton(e) {
-    const objeto = e.currentTarget;
-    arrayBotones.push(Number.parseInt(objeto.id))
+function checboxSelect() {
+    console.log("Entrando en la funcion checboxSelect")
+    const inputs = document.querySelectorAll('input')
+    let arrayBotones = []
+    for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].checked) {
+            arrayBotones.push(Number.parseInt(inputs[i].id))
+        }
+    }
+    console.log(arrayBotones)
+    return arrayBotones;
 }
 
-function ingresarBBDD() {
-    console.log('Entrando funcion ingresarBBDD')
-    let arrayBBDD=[];
-    for (let i = 0; i < arrayBotones.length; i++) {
-        for (let j = 0; j < arrayPersonajesGlobal.length; j++) {
-            if (arrayBotones[i] === arrayPersonajesGlobal[j].id) {
-                console.log(arrayPersonajesGlobal[j])
-                arrayBBDD.push(arrayPersonajesGlobal[j])
-            }            
-        }        
-    }
+ function ingresarBBDD() {
+     console.log('Entrando funcion ingresarBBDD')
+     let arrayBotones = checboxSelect()
+     let arrayBBDD=[];
+     for (let i = 0; i < arrayBotones.length; i++) {
+         for (let j = 0; j < arrayPersonajesGlobal.length; j++) {
+             if (arrayBotones[i] === arrayPersonajesGlobal[j].id) {
+                 console.log(arrayPersonajesGlobal[j])
+                 arrayBBDD.push(arrayPersonajesGlobal[j])
+             }            
+         }        
+     }
     
-    if (window.XMLHttpRequest) {
-        let xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            cambiosEstados(xhr)
-        };
-        xhr.open('POST','save_marvel_characters.php');
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        const objeto = JSON.stringify(arrayBBDD);
-        xhr.send(objeto) 
-    }
-    const breadCrumb = document.getElementById('breadcrumb');
-    breadCrumb.innerHTML = " ";
-    let p = document.createElement('p');
-    p.textContent = "BBDD Cargada Correctamente";
-    breadCrumb.appendChild(p)
-
-}
+     if (window.XMLHttpRequest) {
+         let xhr = new XMLHttpRequest();
+         xhr.onreadystatechange = function() {
+             cambiosEstados(xhr)
+         };
+         xhr.open('POST','save_marvel_characters.php');
+         xhr.setRequestHeader('Content-Type', 'application/json');
+         const objeto = JSON.stringify(arrayBBDD);
+         xhr.send(objeto) 
+     }
+     const breadCrumb = document.getElementById('breadcrumb');
+     breadCrumb.innerHTML = " ";
+     let p = document.createElement('p');
+     p.textContent = "BBDD Cargada Correctamente";
+     breadCrumb.appendChild(p)
+ }
 
 function cambiosEstados(xhr) {
     if (xhr.ReadyState === 4 && xhr.status === 200) {
@@ -156,6 +163,11 @@ function recuperarBD() {
         })
         .then((data)=>{
             crearTablaFetch(data)
+            const breadCrumb = document.getElementById('breadcrumb');
+            breadCrumb.innerHTML = " ";
+            let p = document.createElement('p');
+            p.textContent = "Datos cargados de la BBDD correctamente";
+            breadCrumb.appendChild(p)
         })
         .catch((error) =>{
             console.log(error)
@@ -163,6 +175,7 @@ function recuperarBD() {
 }
 
 function crearTablaFetch(arrayDatos) {
+    console.log('entrando en la funcion crearTablaFetch')
     console.log(arrayDatos)
     const tabla = document.getElementById('tabla');
     let rotulos = [
@@ -191,6 +204,7 @@ function crearTablaFetch(arrayDatos) {
 }
 
 function cleanTable() {
+    console.log('Entrando en la funcion cleanTable')
     const table = document.getElementById('tabla')
     table.innerHTML = '';
     const breadCrumb = document.getElementById('breadcrumb');
@@ -199,6 +213,3 @@ function cleanTable() {
     p.textContent = "Tabla Limpiada Correctamente";
     breadCrumb.appendChild(p)
 }
-
-
-
