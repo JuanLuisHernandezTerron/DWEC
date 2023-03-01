@@ -60,8 +60,10 @@ function rellenarCard(persona) {
     tarjeta.appendChild(botonAnadirTabla)
 
     botonAnadirTabla.addEventListener('click',()=>{
-        arrayUsers.push(PersonaAUX)
-        rellenarTabla(PersonaAUX)
+        if (arrayUsers.indexOf(PersonaAUX) === -1) { // Si no está lo metera y lo pintará en la tabla
+            arrayUsers.push(PersonaAUX)
+            rellenarTabla(PersonaAUX)
+        }
     })
 }
 
@@ -125,9 +127,9 @@ function guardarUsuarioXMLBBDD() {
 }
 
 function cambioEstados(xhr) {
-    if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-            console.log('Introducido correctamente');
-        }
+    if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(xhr.responseText);
+    }else if(xhr.status !== 200){
+        console.log("Error del servidor");
     }
 }
